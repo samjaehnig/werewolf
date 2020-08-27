@@ -1,0 +1,112 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+#title_div {
+    margin: 45px 10px;
+    display: flex;
+    justify-content:center;
+}
+
+#title {
+    font-size: 125px;
+    padding: 0px 30px;
+    border-radius: 20px;
+    line-height: 125px;
+    margin-left: 70px;
+}
+
+span#title {
+    background-color: #fffaa8;
+}
+
+span.player {
+    background-color: #eeeeee;
+}
+
+span.player_me {
+    background-color: #dddddd;
+}
+
+#name {
+    outline: none;
+    background-color: #eeeeee;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+input {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: #000000;
+}
+
+#name_submit:hover, #start_submit:hover, #how_to:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#name_submit {
+    background-color: #caeaf7;
+}
+
+#name_submit:focus, #start_submit:focus {
+    outline: none;
+}
+
+#player_title {
+    font-size: 27px;
+    margin: 10px;
+}
+
+#players {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.player, .player_me {
+    font-size: 21px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin: 0px 5px;
+}
+
+#start_submit {
+    font-size: 40px;
+    background-color: #a1c0e1;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+span#role {
+    background-color: #caeaf7;
+}
+
+#role {
+    padding: 7px 15px;
+    border-radius: 20px;
+}
+
+#how_to {
+    font-size: 18px;
+    margin: 30px 10px;
+    background-color: #a1c0e1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#modal {
+    display: none;
+}

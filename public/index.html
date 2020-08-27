@@ -1,0 +1,48 @@
+<html>
+  <head>
+
+    <title>werewolf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div id="title_div">
+      <span id="title">werewolf</span>
+      <div id="how_to">how to <br>play?</div>
+      <div id="modal">
+        <p>how to play</p>
+        
+      </div>
+    </div>
+
+    <p id="player_title">players:</p>
+    <div id="players"></div>
+
+
+    <form id="add_player">
+      <input id="name" type="text" placeholder="name" />
+      <input id="name_submit" type="submit" value="enter" />
+    </form>
+
+    <form id="start_game">
+    </form>
+
+    <div id="role_div"></div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+
+</html>
