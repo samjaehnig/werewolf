@@ -1,6 +1,6 @@
 var game_started = false;
 
-var socket = io.connect(process.env.PORT);
+var socket = io.connect("https://evening-chamber-87789.herokuapp.com/");
 
 socket.on("connect", function(data) {
     socket.emit("join");
