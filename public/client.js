@@ -1,6 +1,6 @@
 var game_started = false;
 
-var socket = io.connect("http://localhost:5678");
+var socket = io.connect(process.env.PORT);
 
 socket.on("connect", function(data) {
     socket.emit("join");
