@@ -27,7 +27,7 @@ io.on("connection", function(client) {
     client.broadcast.emit("player", data);
     var user = [data, client.id];
     users.push(user);
-    if(users.length == 2) { 
+    if(users.length == 5) { 
       client.emit("display_start");
       client.broadcast.emit("display_start");
     }
@@ -67,4 +67,8 @@ function assignroles() {
 }
 
 
-server.listen(5678);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+server.listen(port);
