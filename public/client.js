@@ -1,4 +1,4 @@
-var game_started = false;
+// var game_started = false;
 
 var socket = io.connect("https://evening-chamber-87789.herokuapp.com/");
 
