@@ -1,6 +1,8 @@
 var game_started = false;
 
-var socket = io.connect("https://werewolf-1night.herokuapp.com/");
+// var socket = io.connect("https://werewolf-1night.herokuapp.com/");
+
+var socket = io.connect("http://localhost:8000");
 
 socket.on("connect", function(data) {
     socket.emit("join");
@@ -50,3 +52,17 @@ $("#start_game").submit(function() {
     this.reset();
     return false;
 });
+
+
+//INDEX.HTML FUNCTIONS
+function open_modal(modal_id) {
+    document.getElementById(modal_id).style.display = "block";
+}
+
+function close_modal(modal_id) {
+    document.getElementById(modal_id).style.display = "none";
+}
+
+window.onclick = function(event) { 
+    if(event.target == document.getElementById('how_to_modal')) { close_modal('how_to_modal'); }
+}

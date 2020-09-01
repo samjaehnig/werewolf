@@ -17,10 +17,45 @@
 
     <div id="title_div">
       <span id="title">werewolf</span>
-      <div id="how_to">how to <br>play?</div>
-      <div id="modal">
-        <p>how to play</p>
-        
+      <div id="how_to" onclick="open_modal('how_to_modal')">how to <br>play?</div>
+      <div id="how_to_modal">
+        <div id="modal">
+          <span id="close_button" onclick="close_modal('how_to_modal')">&times;</span>
+          <p id="how_to_title"><b>instructions</b></p>
+          <div id="how_to_content">
+            <p class="modal_mini_title"><b>overview:</b></p>
+            <div id="overview">
+              welcome to werewolf! <br>
+              <b>here's how the game works:</b> you will be randomly placed on one of three teams and given 
+              one of the roles listed below. once all players are given a role <i>the night</i> begins. during the night you will
+              perform an action dependent on your role (the game will tell you waht to do). at the end of the night, you
+              and the other players must vote on who you want to get rid of. the person you want to vote out is based on your role 
+              at <b>the end</b> of the night. this means your role could be different from what it was at the beginning - you have to
+              try to figure that out. if you vote out the right person with respect to your role, you win!
+            </div>
+            <p class="modal_mini_title"><b>teams:</b></p>
+            <div id="teams">
+              <p><b>the "bad" team:</b> werewolves & minion - win by voting out the minion<br>
+              <b>the "good" team:</b> any townspeople (seer, robber, troublemaker, drunk, insomniac) - win by voting out a werewolf<br>
+              <b>the "other" team:</b> tanner - win by getting yourself voted out</p>
+            </div>
+            <p class="modal_mini_title"><b>roles:</b></p>
+            <div id="roles">
+              <p><b>werewolf:</b> finds out who the other werewolf is</p>
+              <p><b>minion:</b> finds out who the two werewolves are</p>
+              <p><b>seer:</b> views two of the center cards</p>
+              <p><b>robber:</b> swaps their card with another player and looks at what they become</p>
+              <p><b>troublemaker:</b> swaps the roles of two other players</p>
+              <p><b>drunk:</b> swaps their role with one of the extras in the center</p>
+              <p><b>insomniac:</b> @ the end of the night has their role revealed to them</p>
+              <p><b>tanner:</b> they do nothing during the night</p>
+            </div>
+            <p><b>note:</b> <i>you may not be playing with all the roles listed - this depends on the number of players. there will always
+              be three more roles in play than the number of players - there are three "center" cards which no player recieves at the beginning
+              of the night, but may be useful in deducing who is what role in the end</i></p>
+
+          </div>
+        </div>
       </div>
     </div>
 

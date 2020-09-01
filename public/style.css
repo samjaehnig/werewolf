@@ -107,6 +107,53 @@ span#role {
     padding: 10px;
 }
 
-#modal {
+#how_to_modal {
     display: none;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#modal {
+    margin: 2%;
+    padding: 20px;
+    background-color: #fefefe;
+    text-align: right;
+    border-radius: 20px;
+}
+
+
+#how_to_title {
+    text-align: center;
+    margin: 0px;
+    font-size: 40px;
+}
+
+#how_to_content {
+    text-align: left;
+    padding: 30px;
+    margin: 0px;
+    font-size: 21px;
+}
+
+#close_button {
+    padding-right: 10px;
+}
+
+#close_button:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.modal_mini_title {
+    font-size: 27px;
+}
+
+#roles, #overview, #teams {
+    padding: 0px 25px;
 }
