@@ -1,8 +1,8 @@
 var game_started = false;
 
-// var socket = io.connect("https://werewolf-1night.herokuapp.com/");
+var socket = io.connect("https://werewolf-1night.herokuapp.com/");
 
-var socket = io.connect("http://localhost:8000");
+// var socket = io.connect("http://localhost:8000");
 
 socket.on("connect", function(data) {
     socket.emit("join");
