@@ -1,8 +1,8 @@
 var game_started = false;
 
-var socket = io.connect("https://werewolf-1night.herokuapp.com/");
+// var socket = io.connect("https://werewolf-1night.herokuapp.com/");
 
-// var socket = io.connect("http://localhost:8000");
+var socket = io.connect("http://localhost:8000");
 
 socket.on("connect", function(data) {
     socket.emit("join");
@@ -45,20 +45,23 @@ socket.on("minion", function(data) {
 
 socket.on("display_room", function(data) {
     console.log(data);
+    for(var i = 0; i < data.length - 1; i++) {
+        // $("#players").append("<span class='player'>" + data[i][0] + "</span>");
+    }
+    
+    document.getElementById('game_created').style.display = "block";
+    // document.getElementById('player_title').style.display = "none";
 });
 
 
 $("#add_player").submit(function() {
-    if(!game_started) {
-        var player_name = $("#name").val();
-        document.getElementById('game_created').style.display = "none";
-        document.getElementById('game_creation').style.display = "flex";
-        if(player_name != "") { socket.emit("add_player", player_name); }
-        this.reset();
-        return false;
-    } else {
-        //print something to the user given the game has already started
-    }
+    var player_name = $("#name").val();
+    document.getElementById('game_created').style.display = "none";
+    // document.getElementById('player_title').style.display = "none";
+    document.getElementById('game_creation').style.display = "flex";
+    if(player_name != "") { socket.emit("add_player", player_name); }
+    this.reset();
+    return false;
 });
 
 $("#start_game").submit(function() {
@@ -78,12 +81,10 @@ $("#new_form").submit(function() {
 $("#join_form").submit(function() {
     var game_id = $("#room_code").val();
     document.getElementById('game_creation').style.display = "none";
-    console.log(game_id);
     socket.emit("join_game", game_id);
     this.reset();
     return false;
 });
-
 
 //INDEX.HTML FUNCTIONS
 function open_modal(modal_id) {

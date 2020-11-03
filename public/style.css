@@ -22,7 +22,6 @@ body {
     display: flex;
     justify-content: center;
     display: none;
-
 }
 
 .game_start_option {
@@ -39,10 +38,6 @@ body {
 #new_submit {
     margin-top: 10px;
     padding: 10px 20px
-}
-
-#game_created{
-    /* display: none; */
 }
 
 span#title {

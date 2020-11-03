@@ -105,12 +105,14 @@ io.on("connection", function(client) {
       });
       roomid = data.key;
     });
-    client.emit("display_room", roomid);
+    firebase.database().ref('rooms/' + roomid).once("value", function(data) {
+      client.emit("display_room", data.child('players').val());
+    });
   });
 
   client.on("join_game", function(data) {
+    roomid = data;
     firebase.database().ref('rooms/' + data).once("value", function(data) {
-      // console.log(data.val());
       users = data.child('players').val();
       users.push(user);
       firebase.database().ref('rooms/' + data.key).update({
@@ -119,7 +121,9 @@ io.on("connection", function(client) {
       firebase.database().ref('rooms/' + data.key).update({
         players: users
       });
+      client.emit("display_room", data.child('players').val());
     });
+    
     // firebase.database().ref('rooms/' + data).update({
     //   num_players: num_players + 1
     // });
