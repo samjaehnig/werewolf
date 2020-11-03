@@ -35,9 +35,24 @@ socket.on("role", function(data) {
 });
 
 
+socket.on("werewolf", function(data) {
+    $("#role_info").append("<p>the other werewolf is <span id='role'>" + data + " </span></p>");
+});
+
+socket.on("minion", function(data) {
+    
+});
+
+socket.on("display_room", function(data) {
+    console.log(data);
+});
+
+
 $("#add_player").submit(function() {
     if(!game_started) {
         var player_name = $("#name").val();
+        document.getElementById('game_created').style.display = "none";
+        document.getElementById('game_creation').style.display = "flex";
         if(player_name != "") { socket.emit("add_player", player_name); }
         this.reset();
         return false;
@@ -49,6 +64,22 @@ $("#add_player").submit(function() {
 $("#start_game").submit(function() {
     game_started = true;
     socket.emit("starting");
+    this.reset();
+    return false;
+});
+
+$("#new_form").submit(function() {
+    document.getElementById('game_creation').style.display = "none";
+    socket.emit("create");
+    this.reset();
+    return false;
+});
+
+$("#join_form").submit(function() {
+    var game_id = $("#room_code").val();
+    document.getElementById('game_creation').style.display = "none";
+    console.log(game_id);
+    socket.emit("join_game", game_id);
     this.reset();
     return false;
 });

@@ -11,11 +11,38 @@ body {
 }
 
 #title {
-    font-size: 125px;
-    padding: 0px 30px;
+    font-size: 150px;
+    padding: 20px 30px;
     border-radius: 20px;
     line-height: 125px;
     margin-left: 70px;
+}
+
+#game_creation {
+    display: flex;
+    justify-content: center;
+    display: none;
+
+}
+
+.game_start_option {
+    margin: 10px;
+    background-color: #caeaf7;
+    padding: 10px 40px;
+    border-radius: 15px;
+}
+
+.game_option {
+    width: 300px;
+}
+
+#new_submit {
+    margin-top: 10px;
+    padding: 10px 20px
+}
+
+#game_created{
+    /* display: none; */
 }
 
 span#title {
@@ -30,11 +57,12 @@ span.player_me {
     background-color: #dddddd;
 }
 
-#name {
+#name, #room_code {
     outline: none;
     background-color: #eeeeee;
     padding-left: 30px;
     padding-right: 30px;
+    margin: 0px;
 }
 
 
@@ -51,16 +79,16 @@ input {
     color: #000000;
 }
 
-#name_submit:hover, #start_submit:hover, #how_to:hover {
+#name_submit:hover, #start_submit:hover, #how_to:hover, #join_submit:hover, #new_submit:hover {
     cursor: pointer;
     opacity: 0.6;
 }
 
-#name_submit {
+#name_submit, #join_submit:hover, #new_submit:hover {
     background-color: #caeaf7;
 }
 
-#name_submit:focus, #start_submit:focus {
+#name_submit:focus, #start_submit:focus, #join_submit:focus, #new_submit:focus {
     outline: none;
 }
 
@@ -101,7 +129,7 @@ span#role {
 
 #how_to {
     font-size: 18px;
-    margin: 30px 10px;
+    margin: 50px 10px;
     background-color: #a1c0e1;
     border-radius: 10px;
     padding: 10px;

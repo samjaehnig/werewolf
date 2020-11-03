@@ -36,7 +36,7 @@
             <p class="modal_mini_title"><b>teams:</b></p>
             <div id="teams">
               <p><b>the "bad" team:</b> werewolves & minion - win by voting out the minion<br>
-              <b>the "good" team:</b> any townspeople (seer, robber, troublemaker, drunk, insomniac) - win by voting out a werewolf<br>
+              <b>the "good" team:</b> any townspeople (seer, robber, troublemaker, drunk, insomniac, villagers) - win by voting out a werewolf<br>
               <b>the "other" team:</b> tanner - win by getting yourself voted out</p>
             </div>
             <p class="modal_mini_title"><b>roles:</b></p>
@@ -46,32 +46,59 @@
               <p><b>seer:</b> views two of the center cards</p>
               <p><b>robber:</b> swaps their card with another player and looks at what they become</p>
               <p><b>troublemaker:</b> swaps the roles of two other players</p>
-              <p><b>drunk:</b> swaps their role with one of the extras in the center</p>
-              <p><b>insomniac:</b> @ the end of the night has their role revealed to them</p>
               <p><b>tanner:</b> they do nothing during the night</p>
+              <p><b>drunk:</b> swaps their role with one of the extras in the center</p>
+              <p><b>insomniac:</b> at the end of the night has their role revealed to them</p>
+              <p><b>villager:</b> does nothing during the night</p>
+
             </div>
             <p><b>note:</b> <i>you may not be playing with all the roles listed - this depends on the number of players. there will always
               be three more roles in play than the number of players - there are three "center" cards which no player recieves at the beginning
-              of the night, but may be useful in deducing who is what role in the end</i></p>
+              of the night, but may be useful in deducing who is what role in the end. The roles are listed in a particular order - if you have
+              n players, the first n + 3 roles in this list will be in play in some form.</i></p>
 
           </div>
         </div>
       </div>
     </div>
 
-    <p id="player_title">players:</p>
-    <div id="players"></div>
-
-
-    <form id="add_player">
-      <input id="name" type="text" placeholder="name" />
-      <input id="name_submit" type="submit" value="enter" />
-    </form>
-
+    <!-- <p id="start_title">let's play:</p>
     <form id="start_game">
-    </form>
+      <input id="join_game" type="submit" value="join game" />
+      <input id="new_game" type="submit" value="new game" />
+    </form> -->
+
+    <div id="game_creation">
+      <div id="join_game" class="game_option">
+        <span id="start_op_span"><p class="game_start_option">join game</p></span>
+        <form id="join_form">
+          <input id="room_code" type="text" placeholder="room code" />
+          <input id="join_submit" type="submit" value="join" />
+        </form>
+      </div>
+      <div id="new_game" class="game_option">
+        <span id="start_op_span"><p class="game_start_option">new game</p></span>
+        <form id="new_form">
+          <input id="new_submit" type="submit" value="start" />
+        </form>
+      </div>
+    </div>
+
+    <div id="game_created">
+      <p id="player_title">enter your name:</p>
+      <div id="players"></div>
+      <form id="add_player">
+        <input id="name" type="text" placeholder="name" />
+        <input id="name_submit" type="submit" value="enter" />
+      </form>
+
+      <form id="start_game">
+      </form>
+    </div>
 
     <div id="role_div"></div>
+    <div id="role_info"></div>
+
     
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
